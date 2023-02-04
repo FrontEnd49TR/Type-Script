@@ -1,15 +1,8 @@
 "use strict";
 //  Eugene Kuzenko
 Object.defineProperty(exports, "__esModule", { value: true });
-const Rectangle_1 = require("./Rectangle");
-const Square_1 = require("./Square");
-const ShapeContainer_1 = require("./ShapeContainer");
-const shapes = new ShapeContainer_1.ShapesContainer([
-    new Rectangle_1.Rectangle(3, 4),
-    new Square_1.Square(5),
-    new ShapeContainer_1.ShapesContainer([new ShapeContainer_1.ShapesContainer([new Square_1.Square(10), new Square_1.Square(4)]),
-        new Rectangle_1.Rectangle(6, 4)])
-]);
-const totalSquare = shapes.getSquare();
-console.log(totalSquare);
+const WageEmployee_1 = require("./WageEmployee");
+const employee = new WageEmployee_1.WageEmployee(123, "Vasya", 2000, "QA", 10000, 100, 50);
+console.log(`id : ${employee.id}`); // this get
+employee.basicSalary = 10000; // this have set
 //# sourceMappingURL=app.js.map
