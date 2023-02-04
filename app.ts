@@ -1,12 +1,7 @@
-//  Eugene Kuzenko
 
+import { CipherDecipher } from "./CipherDecipher";
 
-import { Shape } from "./ShapeInterface";
-import { Rectangle } from "./Rectangle";
-import { Square } from "./Square";
-const shapes: Array<Shape> = [
-    new Rectangle(3, 4),
-    new Square(5)
-];
-const sumOfShapes: number = shapes.reduce((res, cur) => res + cur.getSquare(), 0)
-console.log(`\nSum of Shapes = ${sumOfShapes}\n`)
+const cipherDecipher: CipherDecipher = new CipherDecipher(32, 127, 10);
+
+console.log(cipherDecipher.cipher("Hello World!"));
+console.log(cipherDecipher.decipher("Rovvy*ay|vn+"))
