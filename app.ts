@@ -1,12 +1,14 @@
 //  Eugene Kuzenko
 
-
-import { Shape } from "./ShapeInterface";
 import { Rectangle } from "./Rectangle";
 import { Square } from "./Square";
-const shapes: Array<Shape> = [
+import { ShapesContainer } from "./ShapeContainer";
+
+const shapes: ShapesContainer = new ShapesContainer([
     new Rectangle(3, 4),
-    new Square(5)
-];
-const sumOfShapes: number = shapes.reduce((res, cur) => res + cur.getSquare(), 0)
-console.log(`\nSum of Shapes = ${sumOfShapes}\n`)
+    new Square(5),
+    new ShapesContainer([new ShapesContainer([new Square(10), new Square(4)]),
+    new Rectangle(6, 4)])
+]);
+const totalSquare: number = shapes.getSquare();
+console.log(totalSquare);
